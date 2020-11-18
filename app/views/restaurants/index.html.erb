@@ -1,0 +1,15 @@
+  <div class="navbar">
+      <%= link_to "Restaurants", restaurants_path, class: "logo" %>
+    <%= link_to "Create Restaurant", new_restaurant_path %>
+  </div>
+  <div class=row>
+    <div class="container">
+      <% @restaurants.each do |restaurant| %>
+        <div class="restaurant-list">
+          <h2 class= title> <%= link_to(restaurant.name, restaurant_path(restaurant)) %></h2>
+          <p class= address><%= restaurant.address %></p>
+          <p class="category"> <%= restaurant.category %> </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
